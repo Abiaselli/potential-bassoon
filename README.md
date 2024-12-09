@@ -34,7 +34,7 @@ etc.
 
 I will include the parquet to json converter i used to convert them, by selecting only the "messages" column.
 
-To load a dataset, leave "chunked dataset" unchecked, have the .json or .jsons you want to use alone in a folder, and press "select dataset directory" and select the folder. Press "load dataset" to load it. Then, check the "use chunked datset" checkbox, and press "select/create tokenized data" and choose no when asked to use existing tokenized data. Create a new folder for the chunked dataset files, and select that folder. Then, you can press start training after adjusting your parameters and loading your model and tokenizer. Note: when pressing stop training, it will have a second dialog box pop up when it actually stops after the current batch is completed so you can save a model if you stop mid training. 
+To load a dataset, leave "chunked dataset" unchecked, have the .json or .jsons you want to use alone in a folder, and press "select dataset directory" and select the folder. Press "load dataset" to load it. Then, check the "use chunked datset" checkbox, and press "select/create tokenized data" and choose no when asked to use existing tokenized data. Create a new folder for the chunked dataset files, and select that folder. Then, you have to press "load dataset" and click on the folder with the chunked file. Then you can press start training after adjusting your parameters and loading your model and tokenizer. Note: when pressing stop training, it will have a second dialog box pop up when it actually stops after the current batch is completed so you can save a model if you stop mid training. 
 
 I hope to add on to this and improve it over time. 
 
