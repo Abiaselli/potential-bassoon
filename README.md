@@ -1,7 +1,7 @@
 # Transformer Trainer for Matmul-Free/limited
 Transformer Trainer for Matmul-free or limited implementation
 
-Hello! This is a training (and inference) program BASED on the Matmul-Free architecture outlined in 
+Hello! This is a modified training (and inference) program BASED on the Matmul-Free architecture outlined in 
 Scalable MatMul-free Language Modeling
 by Rui-Jie Zhu1
 , Yu Zhang2
@@ -13,6 +13,8 @@ by Rui-Jie Zhu1
 , Jason K. Eshraghian1∗
 1University of California, Santa Cruz 2Soochow University
 3University of California, Davis 4LuxiTech
+
+This version includes prototype behavior for multi-head attention and mirr-neuron based training behavior, breaking down datasets into imitation, completion, or response (standard) query-target pairs, to approximate the behavior of mirror neuron learned behavior in humans. Currently has a Bitnet based linear activation, not exactly like the one in the paper, trying to figure it out faces numerous issues even in this implementation.
 
 I should note, this is not a perfect recreation as I lack the necessary hardware to fully implement this system, as it requires a large amount of info to be held on hardware which while easy for inference, creates limitations during training. It is possible to overcome this limitation with smart caching and clearing, but I just wanted something that worked. I haven't yet fully completed a transformer, but based on the loss calculations everything APPEARS to be working correctly.
 
@@ -35,6 +37,8 @@ etc.
 I will include the parquet to json converter i used to convert them, by selecting only the "messages" column.
 
 To load a dataset, leave "chunked dataset" unchecked, have the .json or .jsons you want to use alone in a folder, and press "select dataset directory" and select the folder. Press "load dataset" to load it. Then, check the "use chunked datset" checkbox, and press "select/create tokenized data" and choose no when asked to use existing tokenized data. Create a new folder for the chunked dataset files, and select that folder. Then, you have to press "load dataset" and click on the folder with the chunked file. Then you can press start training after adjusting your parameters and loading your model and tokenizer. Note: when pressing stop training, it will have a second dialog box pop up when it actually stops after the current batch is completed so you can save a model if you stop mid training. 
+
+**I tried to fix some of the workflow behavior, so it should follow an easier path of covering for scenarios such as a folder or file not being creatd or selected.***
 
 I hope to add on to this and improve it over time. 
 
