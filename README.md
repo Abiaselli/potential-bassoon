@@ -1,5 +1,5 @@
-# Transformer Trainer for Matmul-Free/limited
-Transformer Trainer for Matmul-free or limited implementation
+# Revised transformer Trainer for Matmul-Free/limited
+Transformer Trainer for Matmul-free or limited implementation, with specialized dataset preparation and multi-head attention
 
 Hello! This is a modified training (and inference) program BASED on the Matmul-Free architecture outlined in 
 Scalable MatMul-free Language Modeling
@@ -38,6 +38,8 @@ I will include the parquet to json converter i used to convert them, by selectin
 
 To load a dataset, leave "chunked dataset" unchecked, have the .json or .jsons you want to use alone in a folder, and press "select dataset directory" and select the folder. Press "load dataset" to load it. Then, check the "use chunked datset" checkbox, and press "select/create tokenized data" and choose no when asked to use existing tokenized data. Create a new folder for the chunked dataset files, and select that folder. Then, you have to press "load dataset" and click on the folder with the chunked file. Then you can press start training after adjusting your parameters and loading your model and tokenizer. Note: when pressing stop training, it will have a second dialog box pop up when it actually stops after the current batch is completed so you can save a model if you stop mid training. 
 
+You can create a tokenizer from a vocab.json as well.
+
 **I tried to fix some of the workflow behavior, so it should follow an easier path of covering for scenarios such as a folder or file not being creatd or selected.***
 
 I hope to add on to this and improve it over time. 
@@ -58,4 +60,13 @@ Citations:
       title={SmolLM2 - with great data, comes great performance}, 
       author={Loubna Ben Allal and Anton Lozhkov and Elie Bakouch and Gabriel Martín Blázquez and Lewis Tunstall and Agustín Piqueres and Andres Marafioti and Cyril Zakka and Leandro von Werra and Thomas Wolf},
       year={2024},
+}
+@misc{wang2023bitnetscaling1bittransformers,
+      title={BitNet: Scaling 1-bit Transformers for Large Language Models}, 
+      author={Hongyu Wang and Shuming Ma and Li Dong and Shaohan Huang and Huaijie Wang and Lingxiao Ma and Fan Yang and Ruiping Wang and Yi Wu and Furu Wei},
+      year={2023},
+      eprint={2310.11453},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2310.11453}, 
 }
