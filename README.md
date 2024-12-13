@@ -16,6 +16,8 @@ by Rui-Jie Zhu1
 
 This implementation is extremely basic, with minimal logging and the most direct impleentation that I found that works. This currently saves the file as QAT for continued training, it must be converted with "torch.quantization.convert(model, inplace=True)" to use it outside of this (the accompanied inference trainer ignores these keys so you don't need to convert it to test the inference, although I'm not certain it will be accurate to its values after conversion.) 
 
+This is compatible with CUDA or CPU. It will default to CPU if CUDA isn't available, and will default to CUDA if your environment is compatible.
+
 I should note, this is not a perfect recreation as I lack the necessary hardware to fully implement this system, as it requires a large amount of info to be held on hardware which while easy for inference, creates limitations during training. It is possible to overcome this limitation with smart caching and clearing, but I just wanted something that worked. I haven't yet fully completed a transformer, but based on the loss calculations everything APPEARS to be working correctly.
 
 I should note, there are some small bugs due to this being unfinished and numerous revisions during this process. At one point it was abled to use both chunked and unchunked datasets of any type, which I will also upload, but I was not satisfied with the implementation of the architecture. 
