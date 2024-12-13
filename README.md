@@ -1,6 +1,8 @@
 # Basic transformer Trainer for Matmul-Free/limited with QAT
 Transformer Trainer for Matmul-free or limited implementation w/ inference
 
+NOTE: the accompanying fake_quantize and utils.py files will need to be placed in your env/lib/site_packages/torch/ao/quantization folder and replace the originals, or you will need to modify the originals to align with the modified files. Or you can remove QAT from the program.
+
 Hello! This is a training (and inference) program BASED on the Matmul-Free architecture outlined in 
 Scalable MatMul-free Language Modeling
 by Rui-Jie Zhu1
