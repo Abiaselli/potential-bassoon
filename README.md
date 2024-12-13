@@ -1,6 +1,8 @@
 # Transformer Trainer for Matmul-Free/limited
 Transformer Trainer for Matmul-free or limited implementation
 
+Updated version available on mainv2 branch. This is here for archival purposes.
+
 Hello! This is a training (and inference) program BASED on the Matmul-Free architecture outlined in 
 Scalable MatMul-free Language Modeling
 by Rui-Jie Zhu1
