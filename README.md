@@ -16,6 +16,8 @@ by Rui-Jie Zhu1
 
 This version includes prototype behavior for multi-head attention and mirr-neuron based training behavior, breaking down datasets into imitation, completion, or response (standard) query-target pairs, to approximate the behavior of mirror neuron learned behavior in humans. Currently has a Bitnet based linear activation, not exactly like the one in the paper, trying to figure it out faces numerous issues even in this implementation.
 
+This is compatible with CUDA or CPU. It will default to CPU if CUDA isn't available, and will default to CUDA if your environment is compatible.
+
 I should note, this is not a perfect recreation as I lack the necessary hardware to fully implement this system, as it requires a large amount of info to be held on hardware which while easy for inference, creates limitations during training. It is possible to overcome this limitation with smart caching and clearing, but I just wanted something that worked. I haven't yet fully completed a transformer, but based on the loss calculations everything APPEARS to be working correctly.
 
 I should note, there are some small bugs due to this being unfinished and numerous revisions during this process. At one point it was abled to use both chunked and unchunked datasets of any type, which I will also upload, but I was not satisfied with the implementation of the architecture. 
